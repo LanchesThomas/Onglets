@@ -1,34 +1,16 @@
-let ongletOne = document.getElementById('onglet-one');
-let ongletTwo = document.getElementById('onglet-two');
-let ongletThree = document.getElementById('onglet-three');
+let onglets = document.querySelectorAll('.onglets');
 
-let textOngletOne = document.getElementById('text-onglet-one');
-let textOngletTwo = document.getElementById('text-onglet-two');
-let textOngletThree = document.getElementById('text-onglet-three');
+for (let onglet of onglets) {
+    onglet.addEventListener('click', function () {
+        let num = onglet.getAttribute('data-onglets');
+        document.querySelector('.text-active').classList.remove('text-active');
 
-ongletOne.addEventListener('click', function(){
-    textOngletOne.style.display = 'block';
-    ongletOne.style.backgroundColor = '#A8A7A9';
-    textOngletTwo.style.display = 'none';
-    ongletTwo.style.backgroundColor = '#DBD9DB';
-    textOngletThree.style.display = 'none';
-    ongletThree.style.backgroundColor = '#DBD9DB';
-})
+        document
+            .querySelector('#text-onglet-' + num)
+            .classList.add('text-active');
 
-ongletTwo.addEventListener('click', function(){
-    textOngletOne.style.display = 'none';
-    ongletOne.style.backgroundColor = '#DBD9DB';
-    textOngletTwo.style.display = 'block';
-    ongletTwo.style.backgroundColor = '#A8A7A9';
-    textOngletThree.style.display = 'none';
-    ongletThree.style.backgroundColor = '#DBD9DB';
-})
+        document.querySelector('.active').classList.remove('active');
 
-ongletThree.addEventListener('click', function(){
-    textOngletOne.style.display = 'none';
-    ongletOne.style.backgroundColor = '#DBD9DB';
-    textOngletTwo.style.display = 'none';
-    ongletTwo.style.backgroundColor = '#DBD9DB';
-    textOngletThree.style.display = 'block';
-    ongletThree.style.backgroundColor = '#A8A7A9';
-})
+        this.classList.add('active');
+    });
+}

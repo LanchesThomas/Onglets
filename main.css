@@ -40,8 +40,12 @@ main {
     cursor: pointer;
 }
 
-.onglets:active {
+.active {
     background-color: #A8A7A9;
+}
+
+.active p {
+    color:white;
 }
 
 
@@ -50,8 +54,6 @@ main {
     font-size: 28px;
     text-transform: uppercase;
     font-weight: 600;
-    color: black;
-    
 }
 
 .text-container {
@@ -77,8 +79,8 @@ main {
     font-weight: 600;
 }
 
-#text-onglet-one {
-    display: block;
+.text-active {
+    display: block
 }
 
 
